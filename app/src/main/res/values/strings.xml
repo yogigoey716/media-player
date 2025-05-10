@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">media-player</string>
+    <string name="record_image">record_image</string>
 </resources>
