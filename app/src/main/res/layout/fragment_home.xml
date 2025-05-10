@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature.home.HomeFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:background="@drawable/search_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:visibility="gone"
+        android:indeterminateTint="@color/light_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_records"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_medium"
+        app:layout_constraintBottom_toTopOf="@id/card_actions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+
+        tools:listitem="@layout/item_playlist" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_records">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false">
+
+            <LinearLayout
+                android:id="@+id/ly_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_previous"
+                    android:layout_width="@dimen/button_media"
+                    android:layout_height="@dimen/button_media"
+                    android:src="@drawable/ic_previous"
+                    android:layout_margin="@dimen/margin_smapp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:elevation="0dp" app:elevation="0dp"
+                    app:borderWidth="0dp"
+                    app:pressedTranslationZ="0dp" app:rippleColor="@android:color/white"
+                    android:text="" />
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_play"
+                    android:layout_width="@dimen/button_media"
+                    android:layout_height="@dimen/button_media"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_margin="@dimen/margin_smapp"
+                    android:src="@drawable/ic_play"
+                    android:backgroundTint="@android:color/transparent"
+                    android:elevation="0dp" app:elevation="0dp"
+                    app:borderWidth="0dp"
+                    app:pressedTranslationZ="0dp" app:rippleColor="@android:color/white"
+                    android:text="" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_next"
+                    android:layout_width="@dimen/button_media"
+                    android:layout_height="@dimen/button_media"
+                    android:src="@drawable/ic_next"
+                    android:layout_margin="@dimen/margin_smapp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:elevation="0dp" app:elevation="0dp"
+                    app:borderWidth="0dp"
+                    app:pressedTranslationZ="0dp" app:rippleColor="@android:color/white"
+                    android:text="" />
+            </LinearLayout>
+
+
+            <SeekBar
+                android:id="@+id/seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_action"
+                android:thumbTint="@color/light_blue"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
